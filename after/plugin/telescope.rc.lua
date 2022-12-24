@@ -16,17 +16,6 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--ignore-file',
-      '.gitignore'
-    },
   },
   extensions = {
     file_browser = {
@@ -54,16 +43,22 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
+-- respect gitignore (faster)
 vim.keymap.set('n', ';f',
   function()
-    builtin.find_files({
-      no_ignore = false,
-      hidden = true
-    })
+    builtin.find_files()
   end)
+
+-- for hidden files
+vim.keymap.set('n', ';h',
+  function()
+    builtin.find_files({ find_command = { 'rg', '--files', '--hidden' } })
+  end)
+
 vim.keymap.set('n', ';r', function()
   builtin.live_grep()
 end)
+
 vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
@@ -80,7 +75,7 @@ vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
-    select_buffer = true,
+    select_buffer = true, -- select current file if possible
     respect_gitignore = false,
     hidden = true,
     grouped = true,
