@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["NeoSolarized.nvim"] = {
-    loaded = true,
-    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/NeoSolarized.nvim",
-    url = "https://github.com/Tsuzat/NeoSolarized.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -154,11 +149,6 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
-    url = "https://github.com/akinsho/nvim-bufferline.lua"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -199,6 +189,11 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -223,6 +218,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  tlib_vim = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/tlib_vim",
+    url = "https://github.com/tomtom/tlib_vim"
+  },
+  ["vim-addon-mw-utils"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-addon-mw-utils",
+    url = "https://github.com/MarcWeber/vim-addon-mw-utils"
+  },
+  ["vim-snipmate"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-snipmate",
+    url = "https://github.com/garbas/vim-snipmate"
   }
 }
 

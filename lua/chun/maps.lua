@@ -35,6 +35,12 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
+-- tab
+keymap.set('n', '<Tab>', ':tabnext<Return>')
+keymap.set('n', '<S-Tab>', ':tabprev<Return>')
+keymap.set('n', '<A-Left>', ':-tabmove<cr>')
+keymap.set('n', '<A-Right>', ':+tabmove<cr>')
+
 -- Move line
 keymap.set('n', '<S-Up>', ':m-2<CR>')
 keymap.set('i', '<S-Up>', ':m-2<CR>')
@@ -42,24 +48,24 @@ keymap.set('n', '<S-Down>', ':m+<CR>')
 keymap.set('i', '<S-Down>', ':m+<CR>')
 
 -- Move Block
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Stay center when Ctrl-d or Ctrl-u or search
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 -- keep paste item
-vim.keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["_dP]])
 
 -- copy
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set("n", "<leader>Y", [["+Y]])
 
 -- clear Q
-vim.keymap.set("n", "Q", "<nop>")
+keymap.set("n", "Q", "<nop>")
 
 -- rename
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

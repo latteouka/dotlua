@@ -19,6 +19,11 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
+  -- snippets
+  use 'MarcWeber/vim-addon-mw-utils'
+  use 'tomtom/tlib_vim'
+  use 'garbas/vim-snipmate'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -62,8 +67,9 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
+  -- use 'akinsho/nvim-bufferline.lua'
+
+  use "lukas-reineke/indent-blankline.nvim"
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
