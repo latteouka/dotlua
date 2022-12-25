@@ -28,17 +28,19 @@ packer.startup(function(use)
   }
   use 'nvim-lualine/lualine.nvim' -- Statusline
 
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
+  -- use {
+  --   'svrana/neosolarized.nvim',
+  --   requires = { 'tjdevries/colorbuddy.nvim' }
+  -- }
+
+  use 'navarasu/onedark.nvim'
 
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
 
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
-  -- use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/playground'
 
   use 'kyazdani42/nvim-web-devicons' -- File icons
 
