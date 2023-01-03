@@ -16,13 +16,9 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-
-  -- snippets
-  use 'MarcWeber/vim-addon-mw-utils'
-  use 'tomtom/tlib_vim'
-  use 'garbas/vim-snipmate'
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -31,27 +27,29 @@ packer.startup(function(use)
       ts_update()
     end,
   }
+  use 'nvim-treesitter/playground'
+  use 'p00f/nvim-ts-rainbow' -- rainbow brackets
+
+  use {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  }
+
   use 'nvim-lualine/lualine.nvim' -- Statusline
-
-  -- use {
-  --   'svrana/neosolarized.nvim',
-  --   requires = { 'tjdevries/colorbuddy.nvim' }
-  -- }
-
   use 'navarasu/onedark.nvim'
-
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
-
-
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
-  use 'nvim-treesitter/playground'
-
-  use 'kyazdani42/nvim-web-devicons' -- File icons
+  --use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use({
+    'noib3/nvim-cokeline',
+    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+  })
 
   use 'nvim-lua/plenary.nvim' -- telescope dependency
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
@@ -62,20 +60,19 @@ packer.startup(function(use)
   }
 
   use 'norcalli/nvim-colorizer.lua'
-  -- use 'folke/zen-mode.nvim'
+  use 'folke/zen-mode.nvim'
+
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  -- use 'akinsho/nvim-bufferline.lua'
 
-  use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim" -- indent indicator
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
   use 'mattn/emmet-vim'
 
-  use 'p00f/nvim-ts-rainbow'
 
 end)

@@ -25,4 +25,5 @@ require("indent_blankline").setup {
   },
 }
 
+-- toggle with <Leader> + l
 vim.keymap.set('n', '<Leader>l', ':IndentBlanklineToggle<CR>')

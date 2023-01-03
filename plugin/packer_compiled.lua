@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -108,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -153,6 +163,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-code-action-menu"] = {
+    commands = { "CodeActionMenu" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
+  },
+  ["nvim-cokeline"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-cokeline",
+    url = "https://github.com/noib3/nvim-cokeline"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -219,24 +242,26 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  tlib_vim = {
+  ["zen-mode.nvim"] = {
     loaded = true,
-    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/tlib_vim",
-    url = "https://github.com/tomtom/tlib_vim"
-  },
-  ["vim-addon-mw-utils"] = {
-    loaded = true,
-    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-addon-mw-utils",
-    url = "https://github.com/MarcWeber/vim-addon-mw-utils"
-  },
-  ["vim-snipmate"] = {
-    loaded = true,
-    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-snipmate",
-    url = "https://github.com/garbas/vim-snipmate"
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
+          require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu' }, _G.packer_plugins)
+          return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

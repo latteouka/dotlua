@@ -64,8 +64,5 @@ keymap.set("x", "<leader>p", [["_dP]])
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
--- clear Q
-keymap.set("n", "Q", "<nop>")
-
 -- rename
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
