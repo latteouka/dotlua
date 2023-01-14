@@ -106,9 +106,14 @@ nvim_lsp.sumneko_lua.setup {
   },
 }
 
+-- for cjs files
+local util = require 'lspconfig/util'
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_dir = util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.ts', 'postcss.config.js',
+    'postcss.config.ts',
+    'package.json', 'node_modules', '.git')
 }
 
 nvim_lsp.cssls.setup {
