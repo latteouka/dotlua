@@ -35,4 +35,23 @@ return {
     t({ "\t", "export default " }),
     f(copy, 1),
   }),
+
+  -- funtction
+  s("fun", {
+    t({ "export default function() {", "\t" }),
+    t({ "return (", "\t" }),
+    t("<div>"),
+    i(0),
+    t({ "</div>", "\t" }),
+    t({ ")" }),
+    t("}"),
+  }),
+
+  -- for loop
+  s("fori", {
+    t({ "for(let i = 0; i < " }),
+    i(0, "num"),
+    t({ "; i++) {", "\t" }),
+    t("}"),
+  }),
 }

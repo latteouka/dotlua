@@ -62,6 +62,9 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/zen-mode.nvim'
 
+  --glsl
+  use 'tikhomirov/vim-glsl'
+
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
