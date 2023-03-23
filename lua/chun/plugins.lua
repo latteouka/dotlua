@@ -13,11 +13,11 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'hrsh7th/nvim-cmp'     -- Completion
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
   use {
@@ -37,8 +37,8 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'navarasu/onedark.nvim'
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'onsails/lspkind-nvim'      -- vscode-like pictograms
+  use 'glepnir/lspsaga.nvim'      -- LSP UIs
 
   --use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use({
@@ -77,5 +77,5 @@ packer.startup(function(use)
 
   use 'mattn/emmet-vim'
 
-
+  use 'prettier/vim-prettier'
 end)
