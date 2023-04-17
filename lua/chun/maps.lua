@@ -12,9 +12,6 @@ keymap.set('n', 'dw', 'vb"_d')
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
 -- New tab
 keymap.set('n', 'te', ':tabedit')
 
@@ -69,10 +66,6 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 
 -- wrap
 keymap.set("n", "<leader>w", ':set wrap<CR>')
-
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
 
 -- Disable Ctrl+Z
 keymap.set('n', '<C-z>', '<nop>')
