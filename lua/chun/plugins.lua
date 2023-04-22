@@ -37,13 +37,16 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'navarasu/onedark.nvim'
-  use 'onsails/lspkind-nvim'      -- vscode-like pictograms
-  use 'glepnir/lspsaga.nvim'      -- LSP UIs
+  -- use 'folke/tokyonight.nvim'
+
+  use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
 
   --use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use({
     'noib3/nvim-cokeline',
-    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+    -- requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+    requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
   })
 
   use 'nvim-lua/plenary.nvim' -- telescope dependency
@@ -78,4 +81,5 @@ packer.startup(function(use)
   use 'mattn/emmet-vim'
 
   use 'prettier/vim-prettier'
+  -- use 'github/copilot.vim'
 end)

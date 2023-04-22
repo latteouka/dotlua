@@ -210,7 +210,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -242,6 +242,16 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-glsl"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-glsl",
+    url = "https://github.com/tikhomirov/vim-glsl"
+  },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
+  },
   ["zen-mode.nvim"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
@@ -257,7 +267,7 @@ pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu' }, _G.packer_plugins)
+          require('packer.load')({'nvim-code-action-menu'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
