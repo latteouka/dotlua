@@ -22,6 +22,10 @@ end
 local on_attach = function(client, bufnr)
   -- disable semantic highlighting
   client.server_capabilities.semanticTokensProvider = nil
+
+  -- tailwindcss colors
+  require("tailwindcss-colors").buf_attach(bufnr)
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   --Enable completion triggered by <c-x><c-o>

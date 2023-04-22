@@ -10,7 +10,10 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'neovim/nvim-lspconfig' -- LSP
-  use 'williamboman/mason.nvim'
+  use {
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+  }
   use 'williamboman/mason-lspconfig.nvim'
 
   use 'hrsh7th/nvim-cmp'     -- Completion
@@ -82,4 +85,11 @@ packer.startup(function(use)
 
   use 'prettier/vim-prettier'
   -- use 'github/copilot.vim'
+  use {
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    module = "tailwindcss-colors",
+    config = function()
+      require("tailwindcss-colors").setup()
+    end
+  }
 end)
