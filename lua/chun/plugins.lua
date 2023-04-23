@@ -30,8 +30,6 @@ packer.startup(function(use)
       ts_update()
     end,
   }
-  use 'nvim-treesitter/playground'
-  use 'p00f/nvim-ts-rainbow' -- rainbow brackets
 
   use {
     'weilbith/nvim-code-action-menu',
@@ -45,11 +43,9 @@ packer.startup(function(use)
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
-  --use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use({
     'noib3/nvim-cokeline',
-    -- requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-    requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
+    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
   })
 
   use 'nvim-lua/plenary.nvim' -- telescope dependency
@@ -66,11 +62,11 @@ packer.startup(function(use)
   }
 
   use 'norcalli/nvim-colorizer.lua'
-  use 'folke/zen-mode.nvim'
 
   --glsl
   use 'tikhomirov/vim-glsl'
 
+  -- markdown preview :MarkdownPreview
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -78,18 +74,13 @@ packer.startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim" -- indent indicator
 
-  use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
-
   use 'mattn/emmet-vim'
-
   use 'prettier/vim-prettier'
-  -- use 'github/copilot.vim'
-  use {
-    "themaxmarchuk/tailwindcss-colors.nvim",
-    module = "tailwindcss-colors",
-    config = function()
-      require("tailwindcss-colors").setup()
-    end
-  }
+
+  -- use 'lewis6991/gitsigns.nvim'
+  -- use 'dinhhuy258/git.nvim' -- For git blame & browse
+  -- use 'folke/zen-mode.nvim'
+  -- use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  -- use 'nvim-treesitter/playground'
+  -- use 'p00f/nvim-ts-rainbow' -- rainbow brackets
 end)
