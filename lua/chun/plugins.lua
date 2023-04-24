@@ -77,6 +77,7 @@ packer.startup(function(use)
   use 'mattn/emmet-vim'
   use 'prettier/vim-prettier'
 
+  use "arnamak/stay-centered.nvim"
   -- use 'lewis6991/gitsigns.nvim'
   -- use 'dinhhuy258/git.nvim' -- For git blame & browse
   -- use 'folke/zen-mode.nvim'

@@ -212,6 +212,11 @@ _G.packer_plugins = {
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["stay-centered.nvim"] = {
+    loaded = true,
+    path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/stay-centered.nvim",
+    url = "https://github.com/arnamak/stay-centered.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/chunn/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
