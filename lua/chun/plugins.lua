@@ -38,14 +38,13 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'navarasu/onedark.nvim'
-  -- use 'folke/tokyonight.nvim'
 
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
   use({
     'noib3/nvim-cokeline',
-    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+    requires = 'kyazdani42/nvim-web-devicons',
   })
 
   use 'nvim-lua/plenary.nvim' -- telescope dependency
@@ -63,10 +62,9 @@ packer.startup(function(use)
 
   use 'norcalli/nvim-colorizer.lua'
 
-  --glsl
-  use 'tikhomirov/vim-glsl'
+  use 'tikhomirov/vim-glsl' -- glsl
 
-  -- markdown preview :MarkdownPreview
+  -- markdown preview use this command :MarkdownPreview
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -75,9 +73,9 @@ packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- indent indicator
 
   use 'mattn/emmet-vim'
-  use 'prettier/vim-prettier'
 
-  use "arnamak/stay-centered.nvim"
+  -- use 'prettier/vim-prettier'
+  -- use "arnamak/stay-centered.nvim"
   -- use 'lewis6991/gitsigns.nvim'
   -- use 'dinhhuy258/git.nvim' -- For git blame & browse
   -- use 'folke/zen-mode.nvim'

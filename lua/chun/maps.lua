@@ -45,8 +45,8 @@ keymap.set('n', '<S-Down>', ':m+<CR>')
 keymap.set('i', '<S-Down>', ':m+<CR>')
 
 -- Move Block
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 
 -- Stay center when Ctrl-d or Ctrl-u or search
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -69,3 +69,6 @@ keymap.set("n", "<leader>w", ':set wrap<CR>')
 
 -- Disable Ctrl+Z
 keymap.set('n', '<C-z>', '<nop>')
+
+-- markdown preview
+keymap.set('n', '<leader>m', ':MarkdownPreviewToggle<CR>')

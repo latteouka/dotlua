@@ -73,24 +73,32 @@ protocol.CompletionItemKind = {
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
 
+-- ts server
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
 }
 
-nvim_lsp.sourcekit.setup {
+-- tailwindcss
+-- for cjs files
+local util = require 'lspconfig/util'
+nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  root_dir = util.root_pattern('tailwind.config.js',
+    'tailwind.config.cjs',
+    'tailwind.config.ts',
+    'postcss.config.js',
+    'postcss.config.ts',
+    'package.json',
+    'node_modules',
+    '.git')
 }
 
--- nvim_lsp.sumneko_lua.setup {
+-- lua
 nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
@@ -112,21 +120,8 @@ nvim_lsp.lua_ls.setup {
   },
 }
 
--- for cjs files
-local util = require 'lspconfig/util'
-nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  root_dir = util.root_pattern('tailwind.config.js',
-    'tailwind.config.cjs',
-    'tailwind.config.ts',
-    'postcss.config.js',
-    'postcss.config.ts',
-    'package.json',
-    'node_modules',
-    '.git')
-}
-
+-- css
+-- ignore part is for tailwindcss apply
 nvim_lsp.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -152,12 +147,25 @@ nvim_lsp.cssls.setup {
   },
 }
 
-nvim_lsp.astro.setup {
+nvim_lsp.pyright.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          reportGeneralTypeIssues = "none",
+          reportOptionalMemberAccess = "none",
+          reportOptionalSubscript = "none",
+          reportPrivateImportUsage = "none",
+        }
+      }
+    }
+  }
 }
 
-
+-- virtual_text is for showing diagnostics without hovering
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
@@ -168,12 +176,35 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+
+-- nvim_lsp.glslls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities
+-- }
+
+-- nvim_lsp.astro.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities
+-- }
+
+-- nvim_lsp.flow.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities
+-- }
+
+-- nvim_lsp.sourcekit.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
+
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+-- do I need this?
 
 vim.diagnostic.config({
   -- virtual_text = {
