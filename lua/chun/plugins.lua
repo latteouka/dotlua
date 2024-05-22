@@ -38,7 +38,8 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   -- use 'navarasu/onedark.nvim'
-  use "olimorris/onedarkpro.nvim"
+  use 'folke/tokyonight.nvim'
+  -- use "olimorris/onedarkpro.nvim"
 
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'glepnir/lspsaga.nvim' -- LSP UIs
@@ -66,10 +67,10 @@ packer.startup(function(use)
   use 'tikhomirov/vim-glsl' -- glsl
 
   -- markdown preview use this command :MarkdownPreview
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  -- use({
+  --   "iamcco/markdown-preview.nvim",
+  --   run = function() vim.fn["mkdp#util#install"]() end,
+  -- })
 
   use "lukas-reineke/indent-blankline.nvim" -- indent indicator
 
