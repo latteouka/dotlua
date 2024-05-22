@@ -37,7 +37,8 @@ packer.startup(function(use)
   }
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'navarasu/onedark.nvim'
+  -- use 'navarasu/onedark.nvim'
+  use "olimorris/onedarkpro.nvim"
 
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'glepnir/lspsaga.nvim' -- LSP UIs

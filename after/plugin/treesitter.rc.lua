@@ -34,9 +34,9 @@ ts.setup {
 
   --  additional_vim_regex_highlighting = true,
 
-  playground = {
-    enable = true,
-  },
+  -- playground = {
+  --   enable = true,
+  -- },
   -- rainbow = {
   --   enable = false,
   -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
