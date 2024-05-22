@@ -31,9 +31,21 @@ packer.startup(function(use)
     end,
   }
 
-  use {
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
+  -- use {
+  --   'weilbith/nvim-code-action-menu',
+  --   cmd = 'CodeActionMenu',
+  -- }
+
+  -- use {
+  --   "aznhe21/actions-preview.nvim",
+  --   config = function()
+  --     vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+  --   end,
+  -- }
+
+  use { "ibhagwan/fzf-lua",
+    -- optional for icon support
+    requires = { "nvim-tree/nvim-web-devicons" }
   }
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
