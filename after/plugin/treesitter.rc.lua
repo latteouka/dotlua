@@ -27,11 +27,6 @@ ts.setup {
     "html",
     "lua"
   },
-
-  autotag = {
-    enable = true,
-  },
-
   --  additional_vim_regex_highlighting = true,
 
   -- playground = {
