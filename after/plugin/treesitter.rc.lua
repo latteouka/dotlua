@@ -9,7 +9,7 @@ ts.setup {
 
   indent = {
     enable = true,
-    disable = { "python" },
+    disable = {},
   },
 
   ensure_installed = {
