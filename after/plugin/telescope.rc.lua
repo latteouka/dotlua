@@ -46,14 +46,18 @@ telescope.load_extension("file_browser")
 -- respect gitignore (faster)
 vim.keymap.set('n', ';f',
   function()
-    builtin.find_files()
+    -- builtin.find_files()
+    builtin.find_files({
+      find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+    })
   end)
 
 -- for hidden files
-vim.keymap.set('n', ';h',
-  function()
-    builtin.find_files({ find_command = { 'rg', '--files', '--hidden' } })
-  end)
+vim.keymap.set('n', ';h', function()
+  builtin.find_files({
+    find_command = { 'rg', '--files', '--hidden' }
+  })
+end)
 
 vim.keymap.set('n', ';r', function()
   builtin.live_grep()
@@ -62,15 +66,19 @@ end)
 vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
+
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
 end)
+
 vim.keymap.set('n', ';;', function()
   builtin.resume()
 end)
+
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
+
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
