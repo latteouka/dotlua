@@ -76,7 +76,7 @@ packer.startup(function(use)
 
   use 'norcalli/nvim-colorizer.lua'
 
-  use 'tikhomirov/vim-glsl' -- glsl
+  -- use 'tikhomirov/vim-glsl' -- glsl
 
   -- markdown preview use this command :MarkdownPreview
   -- use({
