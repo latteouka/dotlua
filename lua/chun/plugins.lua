@@ -99,6 +99,15 @@ packer.startup(function(use)
     end
   })
 
+  use({
+    'MeanderingProgrammer/render-markdown.nvim',
+    after = { 'nvim-treesitter' },
+    requires = { 'echasnovski/mini.nvim' },
+    config = function()
+      require('render-markdown').setup({})
+    end,
+  })
+
   -- use 'prettier/vim-prettier'
   -- use "arnamak/stay-centered.nvim"
   -- use 'lewis6991/gitsigns.nvim'
